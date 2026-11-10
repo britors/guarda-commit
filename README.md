@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".claude-plugin/icon.svg" alt="Ícone do guarda-commit: um escudo com um commit" width="128">
+</p>
+
 # guarda-commit
 
 [Português](#português) · [English](#english)
@@ -38,6 +42,10 @@ Em versões anteriores:
 ```
 
 Precisa de `python3` e `git` no PATH.
+
+### Uso
+
+Não há o que chamar. Depois de instalado, o hook confere cada `git commit` e `git push` que o Claude roda. Quando bloqueia, o Claude explica o motivo e corrige o problema ou pergunta a você. Para mudar as regras, veja a configuração abaixo.
 
 ### Configuração
 
@@ -82,7 +90,17 @@ Para rodar os testes: `python3 -m unittest discover -s tests`.
 - **Push:** force push or deletion of protected branches (`main`, `master`), and optionally any direct push to them.
 - Understands `git add -A && git commit`, `commit -a`, `git -C`, `cd … &&` and heredoc messages. Secrets are never echoed back.
 
-Install with `/plugin install guarda-commit --marketplace britors/guarda-commit`. Configure with `.guarda-commit.json` in the repository root or `~/.claude/guarda-commit.json` (keys above). Mark a false positive with a `guarda-commit: ignorar` comment on the line.
+Install:
+
+```
+/plugin install guarda-commit --marketplace britors/guarda-commit
+```
+
+On older versions, run `/plugin marketplace add britors/guarda-commit` and then `/plugin install guarda-commit@guarda-commit`.
+
+Usage: nothing to call. Once installed, the hook checks every `git commit` and `git push` Claude runs; when it blocks one, Claude explains why and fixes the problem or asks you.
+
+Configure with `.guarda-commit.json` in the repository root or `~/.claude/guarda-commit.json` (keys above). Mark a false positive with a `guarda-commit: ignorar` comment on the line.
 
 ## Licença / License
 
