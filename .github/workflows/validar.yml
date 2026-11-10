@@ -1,0 +1,26 @@
+name: Validar
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Hook compila
+        run: python3 -m py_compile hooks/guarda.py
+      - name: Testes
+        run: python3 -m unittest discover -s tests -v
+      - name: Manifesto do plugin
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          claude plugin validate .

@@ -1,0 +1,17 @@
+{
+  "description": "Revisa git commit e git push antes de rodarem e bloqueia o que não deve ir para o repositório.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/guarda.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

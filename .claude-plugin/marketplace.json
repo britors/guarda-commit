@@ -1,0 +1,16 @@
+{
+  "name": "guarda-commit",
+  "owner": {
+    "name": "Rodrigo Brito"
+  },
+  "metadata": {
+    "description": "Plugin que revisa commits e pushes do Claude Code antes de acontecerem."
+  },
+  "plugins": [
+    {
+      "name": "guarda-commit",
+      "source": "./",
+      "description": "Revisa cada git commit e git push do Claude antes de rodar: segredos, arquivos sensíveis ou grandes, force push em branch protegido e padrão de mensagem."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "guarda-commit",
+  "displayName": "Guarda-commit",
+  "version": "1.0.0",
+  "description": "Revisa cada git commit e git push do Claude antes de rodar: segredos, arquivos sensíveis ou grandes, force push em branch protegido e padrão de mensagem.",
+  "author": {
+    "name": "Rodrigo Brito"
+  },
+  "homepage": "https://github.com/britors/guarda-commit",
+  "repository": "https://github.com/britors/guarda-commit",
+  "license": "GPL-3.0-only",
+  "keywords": ["git", "commit", "segredos", "seguranca", "hooks"]
+}
